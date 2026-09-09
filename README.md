@@ -1,24 +1,46 @@
-# README
+# Glysera Backend API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RESTful API backend for the Glysera healthcare management system, built with Ruby on Rails 8 and PostgreSQL. It exposes endpoints for patient registration, equipment lifecycle tracking, clinical observations, and health unit administration.
 
-Things you may want to cover:
+## Tech Stack
 
-* Ruby version
+* **Framework:** Ruby on Rails 8 (API mode)
+* **Language:** Ruby 3.2+
+* **Database:** PostgreSQL
+* **Web Server:** Puma
+* **Middleware:** Rack-CORS
 
-* System dependencies
+## Key Features
 
-* Configuration
+* **Patient & Equipment Management:** Full CRUD operations for clinical records, medical devices, and observations.
+* **Custom Route Constraints:** Regex-validated parameters for CPF format matching on patient queries (`/pacientes/:cpf`).
+* **Relational Data Pipeline:** Managed PostgreSQL migrations with relational integrity between addresses, patients, and assigned equipment.
+* **CORS Configured:** Secure cross-origin resource sharing tailored for the Vite/React single-page application.
 
-* Database creation
+## API Endpoints
 
-* Database initialization
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` / `POST` | `/pacientes` | List all patients or register a new patient |
+| `GET` | `/pacientes/:cpf` | Retrieve patient details by CPF (regex-constrained) |
+| `PUT` / `DELETE` | `/pacientes/:id` | Update or delete a patient record |
+| `GET` / `POST` | `/equipamentos` | List equipment or register new medical devices |
+| `GET` / `PUT` / `DELETE` | `/equipamentos/:id` | Retrieve, update, or remove equipment |
+| `GET` / `POST` | `/observacoes` | Retrieve or add clinical observation notes |
+| `GET` | `/unidade_de_saudes` | List available healthcare units |
+| `POST` | `/emissao_formulario` | Process and generate clinical form emissions |
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prerequisites
 
-* Deployment instructions
+* Ruby 3.2+
+* PostgreSQL 14+
+* Bundler
 
-* ...
+### Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Quentalheitor/Glysera_backend.git](https://github.com/Quentalheitor/Glysera_backend.git)
+   cd Glysera_backend
