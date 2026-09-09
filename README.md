@@ -44,3 +44,9 @@ RESTful API backend for the Glysera healthcare management system, built with Rub
    ```bash
    git clone [https://github.com/Quentalheitor/Glysera_backend.git](https://github.com/Quentalheitor/Glysera_backend.git)
    cd Glysera_backend
+
+   bundle install
+
+   bin/rails db:create db:migrate db:seed
+
+   bin/rails server
